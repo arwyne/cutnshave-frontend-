@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 /* Mutations */
 import { flowRight as compose } from "lodash";
@@ -16,7 +17,7 @@ const ReservationPage = (props) => {
   const [redirectToProfile, setRedirectToProfile] = useState(false);
 
   if (redirectToProfile) {
-    return <Redirect to="/profile" />;
+    return <Redirect to="/" />;
   }
 
   let today = new Date();
@@ -35,7 +36,7 @@ const ReservationPage = (props) => {
   if (serviceData !== undefined) {
     image = <img className="img-fluid" src={serviceData.image} alt="" />;
     service = <td>{serviceData.service}</td>;
-    price = <td>price</td>;
+    price = <td>&#8369;{serviceData.price}</td>;
     description = <td>{serviceData.description}</td>;
   }
 
@@ -79,36 +80,43 @@ const ReservationPage = (props) => {
   return (
     <React.Fragment>
       <NavBar />
-      <div className="container">
+      <div className="fluid-container reserve-main-container">
         <div className="row reserve-header">
-          <h3>Add Reservation</h3>
+          <h3>Reservation Form</h3>
         </div>
+        <div className="hr-black"></div>
         <div className="row reserve-body">
-          <div className="col-lg-5 reserve-image">
+          <div className="col-lg-5 offset-lg-0 col-md-6 offset-md-3 reserve-image">
             <div>{image}</div>
           </div>
 
-          <div className="col-lg-7 reserve-form">
+          <div className="col-lg-6 reserve-form">
             <form onSubmit={(e) => onSubmit(e)}>
               <table className="table">
                 <tr>
-                  <td>Service:</td>
+                  <td>
+                    <label>Service:</label>
+                  </td>
                   {service}
                 </tr>
 
                 <tr>
-                  <td>Description:</td>
+                  <td>
+                    <label>Description:</label>
+                  </td>
                   {description}
                 </tr>
 
                 <tr>
-                  <td>Price:</td>
+                  <td>
+                    <label>Price:</label>
+                  </td>
                   {price}
                 </tr>
 
                 <tr>
                   <td>
-                    <label htmlFor="reservation-date">Reservation Date</label>
+                    <label htmlFor="reservation-date">Reservation Date:</label>
                   </td>
                   <td>
                     <input
@@ -123,7 +131,7 @@ const ReservationPage = (props) => {
 
                 <tr>
                   <td>
-                    <label htmlFor="reservation-time">Reservation Time</label>
+                    <label htmlFor="reservation-time">Reservation Time:</label>
                   </td>
                   <td>
                     <input
@@ -139,7 +147,9 @@ const ReservationPage = (props) => {
                 <tr>
                   <td></td>
                   <td>
-                    <button type="submit">Confirm</button>
+                    <button className="form-btn" type="submit">
+                      Confirm
+                    </button>
                   </td>
                 </tr>
               </table>
@@ -147,6 +157,8 @@ const ReservationPage = (props) => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </React.Fragment>
   );
 };

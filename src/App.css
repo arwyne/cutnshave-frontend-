@@ -2,8 +2,551 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
+
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 150px;
+}
+
+/*
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Vollkorn SC', serif; 
+
+*/
 
 .service-container {
   align-items: center;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.logo {
+  max-width: 50px;
+}
+
+.nav-link,
+.navbar-brand {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+}
+
+.navbar-brand {
+  font-family: "Vollkorn SC", serif;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: black;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.dropdown-menu {
+  background-color: black;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.toggler-icon {
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* home page */
+h1 {
+  font-family: "Vollkorn SC", serif;
+  color: white;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 2.7rem;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.home-header-row {
+  background-color: black;
+  padding: 20px;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.home-header-col {
+  text-align: center;
+}
+
+.home-logo {
+  max-width: 150px;
+}
+
+/* welcome container */
+.welcome-main-container {
+  max-width: 1400px;
+  min-height: 800px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.welcome-container h2 {
+  font-size: 2.8rem;
+  font-family: "Roboto Slab", serif;
+  padding: 15px;
+}
+
+.welcome-container p {
+  font-size: 1.2rem;
+}
+
+.hr-black {
+  border-bottom: solid 2px black;
+  max-width: 300px;
+  min-width: 100px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.book-btn {
+  border: solid 2px black;
+  max-width: 200px;
+  min-width: 200px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0;
+}
+
+.book-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* what we do container */
+.do-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.do-sub-container {
+  padding: 20px;
+}
+
+.do-container {
+  border: solid 1px black;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+}
+
+.do-img {
+  max-width: 100px;
+}
+
+.do-container h6 {
+  margin: 0 auto;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.divider {
+  border-bottom: solid 3px black;
+  max-width: 50px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.do-container p {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.parallax {
+  background-image: url("/images/parallax-bg1.jpeg");
+  min-height: 250px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.parallax h3 {
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+  font-size: 2rem;
+}
+
+.parallax p {
+  color: white;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+}
+
+.hr {
+  border-bottom: solid 3px white;
+  max-width: 100px;
+  min-width: 100px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.add-service-main-container {
+  padding-top: 100px;
+}
+
+label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+.form-btn {
+  border: solid 2px black;
+  max-width: 200px;
+  min-width: 180px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0;
+  max-height: 40px;
+  min-height: 40px;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.form-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="date"],
+input[type="time"],
+textarea {
+  outline: 0;
+  border-radius: 4px;
+  border: 1px solid #d1d1d1;
+  box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="file"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover,
+textarea:hover {
+  box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+textarea:focus {
+  color: #4b515d;
+  border: 1px solid #b8b6b6;
+  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01),
+    0px 0px 8px rgba(0, 0, 0, 0.2);
+  /* outline-width: 0; */
+}
+
+label {
+  font-weight: 500;
+}
+
+.service-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.service-container {
+  margin-top: 50px;
+}
+
+.service-container h4 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.service-container h5 {
+  font-size: 1.4rem;
+}
+
+.service-btn-container {
+  padding: 0;
+}
+
+.service-btn {
+  border: solid 2px black;
+  max-width: 200px;
+  min-width: 180px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0;
+  max-height: 40px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.service-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Reservation Page */
+.reserve-main-container {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reserve-body {
+  margin-top: 70px;
+}
+
+.reserve-image {
+  text-align: center;
+  padding: 0;
+}
+
+.reserve-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Update List */
+.updatelist-main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.update-btn {
+  border: solid 2px black;
+  max-width: 200px;
+  min-width: 180px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0;
+  max-height: 40px;
+  min-height: 40px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.update-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.delete-btn {
+  border: solid 2px black;
+  max-width: 200px;
+  min-width: 180px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0;
+  max-height: 40px;
+  min-height: 40px;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+}
+
+.delete-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.update-btn,
+.delete-btn {
+  margin-bottom: 5px;
+}
+
+/* Update Form */
+.updateform-main-container {
+  max-width: 1200px;
+  display: flex;
+  margin-top: 100px;
+}
+
+/* Transaction Page */
+.transaction-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.table {
+  text-align: center;
+}
+
+.trans-icons {
+  font-size: 1.5rem;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Page Not Found */
+.notfound {
+  max-height: 50vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px;
+}
+
+/* 
+
+  Media Query
+
+*/
+@media only screen and (max-width: 400px) {
+  .welcome-main-container {
+    margin-top: 50px;
+  }
+  .welcome-container {
+    margin-top: 50px;
+  }
+
+  .welcome-main-container p {
+    margin-bottom: 40px;
+  }
+
+  .do-sub-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .parallax {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  .service-container {
+    text-align: center;
+    max-width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .service-container img {
+    margin-bottom: 20px;
+  }
+
+  .service-btn {
+    margin-top: 25px;
+  }
+
+  .reserve-image {
+    padding: 0;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .reserve-form {
+    padding: 20px;
+  }
+
+  .update-btn,
+  .delete-btn {
+    margin: 0;
+  }
+
+  .transaction-main-container {
+    max-width: 300px;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .welcome-main-container {
+    margin-top: 80px;
+  }
+
+  .welcome-container {
+    margin-top: 60px;
+  }
+  .do-main-container {
+    padding: 40px;
+  }
+  .do-sub-container {
+    padding: 40px;
+  }
+
+  .parallax {
+    margin-top: 60px;
+  }
+
+  .service-container {
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .service-container img {
+    margin-bottom: 20px;
+  }
+
+  .reserve-form {
+    padding: 20px;
+  }
+
+  .update-btn,
+  .delete-btn {
+    margin: 0;
+  }
+
+  .transaction-main-container {
+    max-width: 600px;
+  }
 }

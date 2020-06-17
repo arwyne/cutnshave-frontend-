@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "react-apollo";
 import { getServicesQuery } from "../../graphql/queries.js";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 import { flowRight as compose } from "lodash";
 import { deleteServiceMutation } from "../../graphql/mutations";
@@ -33,9 +34,12 @@ const UpdateServiceList = (props) => {
   return (
     <React.Fragment>
       <NavBar />
-      <div className="container">
+      <div className="fluid-container updatelist-main-container">
+        <h3>Services</h3>
+        <div className="hr-black"></div>
         <div>{service}</div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };

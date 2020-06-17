@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 import UpdateServiceForm from "./UpdateServiceForm";
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -62,6 +63,7 @@ const UpdateServicePage = (props) => {
     <React.Fragment>
       <NavBar />
       {data}
+      <Footer />
     </React.Fragment>
   );
 };

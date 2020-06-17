@@ -10,8 +10,9 @@ import AddServicePage from "./pages/Service/AddServicePage";
 import UpdateServiceList from "./pages/Service/UpdateServiceList";
 import UpdateServicePage from "./pages/Service/UpdateServicePage";
 import ReservationPage from "./pages/Reservation/ReservationPage";
-import ProfilePage from "./pages/Profile/ProfilePage";
+// import ProfilePage from "./pages/Profile/ProfilePage";
 import TransactionPage from "./pages/Transacation/TransactionPage";
+import PageNotFound from "./components/PageNotFound";
 
 /* for router */
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -45,8 +46,9 @@ const App = () => {
             path="/reservation/:serviceid"
             component={ReservationPage}
           />
-          <Route exact path="/profile" component={ProfilePage} />
+          {/* <Route exact path="/profile" component={ProfilePage} /> */}
           <Route exact path="/transaction" component={TransactionPage} />
+          <Route component={PageNotFound}></Route>
         </Switch>
       </BrowserRouter>
     </ApolloProvider>

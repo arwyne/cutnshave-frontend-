@@ -7,18 +7,71 @@ const NavBar = () => {
 
   let logged = "";
   if (localStorage.token != null) {
-    logged = (
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item">
-          <a className="nav-link" href="/login" onClick={() => logout()}>
-            Logout
-          </a>
-        </li>
-      </ul>
-    );
+    if (localStorage.role === "0") {
+      logged = (
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              Home
+            </a>
+          </li>
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Admin
+            </a>
+            <div
+              className="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <a className="dropdown-item" href="/addservice">
+                Add Service
+              </a>
+              <a className="dropdown-item" href="/editservice">
+                Update Services
+              </a>
+              <a className="dropdown-item" href="/transaction">
+                Transactions
+              </a>
+            </div>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/login" onClick={() => logout()}>
+              Logout
+            </a>
+          </li>
+        </ul>
+      );
+    } else {
+      logged = (
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              Home
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/service">
+              Services
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/login" onClick={() => logout()}>
+              Logout
+            </a>
+          </li>
+        </ul>
+      );
+    }
   } else {
     logged = (
-      <ul className="navbar-nav mr-auto">
+      <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <a className="nav-link" href="/register">
             Register
@@ -34,9 +87,10 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg fixed-top">
       <a className="navbar-brand" href="/">
-        Barber
+        <img className="logo" src="/images/logo-white.png" alt="" />
+        Cut 'N' Shave
       </a>
       <button
         className="navbar-toggler"
@@ -47,7 +101,9 @@ const NavBar = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <span>
+          <i class="fas fa-angle-double-down toggler-icon"></i>
+        </span>
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         {logged}

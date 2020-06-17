@@ -35,13 +35,14 @@ const UpdateServiceForm = (props) => {
 
   return (
     <React.Fragment>
-      <div className="container">
+      <div className="container-fluid updateform-main-container">
         <div>
           <img src={returnFile} alt="" className="img-fluid" />
         </div>
         <div className="updateService-container">
           <div className="row updateService-header">
             <h3>Update Service</h3>
+            <div className="hr-black"></div>
           </div>
           <div className="row updateService-body">
             <div className="col-lg-4">

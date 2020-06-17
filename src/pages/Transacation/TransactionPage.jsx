@@ -1,4 +1,6 @@
 import React from "react";
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 /* Mutations */
 import { flowRight as compose } from "lodash";
@@ -44,22 +46,30 @@ const TransactionPage = (props) => {
 
   return (
     <React.Fragment>
-      <div>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Reference No</th>
-              <th>Reservation Date</th>
-              <th>Reservation Time</th>
-              <th>Service</th>
-              <th>Name</th>
-              <th>Mobile No</th>
-            </tr>
-          </thead>
-          <tbody>{data ? data : null}</tbody>
-          {/* <tbody>{data}</tbody> */}
-        </table>
+      <NavBar />
+      <div className="fluid-container transaction-main-container">
+        <h3>Update Service</h3>
+        <div className="hr-black"></div>
+
+        <div className="transaction-body-container table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Reference No</th>
+                <th>Reservation Date</th>
+                <th>Reservation Time</th>
+                <th>Service</th>
+                <th>Name</th>
+                <th>Mobile No</th>
+              </tr>
+            </thead>
+            <tbody>{data ? data : null}</tbody>
+            {/* <tbody>{data}</tbody> */}
+          </table>
+        </div>
       </div>
+
+      <Footer />
     </React.Fragment>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 /* http request */
 import axios from "axios";
@@ -63,18 +64,19 @@ const AddServicePage = (props) => {
   return (
     <React.Fragment>
       <NavBar />
-      <div className="fluid-container">
-        <div className="col-lg-4 offset-lg-6">
+      <div className="fluid-container add-service-main-container">
+        <div className="col-lg-4 offset-lg-4">
           <div className="add-service-container">
             <div className="row add-service-header">
               <h3>Add Service</h3>
             </div>
+            <div className="hr-black"></div>
           </div>
           <div className="row add-service-body">
             <div className="col">
-              <form onSubmit={onSubmit}>
+              <form onSubmit={onSubmit} className="add-form">
                 <div className="form-group">
-                  <label htmlFor="">Service</label>
+                  <label htmlFor="">Service:</label>
                   <input
                     required
                     type="text"
@@ -84,7 +86,7 @@ const AddServicePage = (props) => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="">Description</label>
+                  <label htmlFor="">Description:</label>
                   <textarea
                     required
                     className="form-control"
@@ -96,7 +98,7 @@ const AddServicePage = (props) => {
                   ></textarea>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="">Duration(mins)</label>
+                  <label htmlFor="">Price:</label>
                   <input
                     required
                     className="form-control"
@@ -105,7 +107,7 @@ const AddServicePage = (props) => {
                   />
                 </div>
                 <div className="from-group">
-                  <label htmlFor="">Image</label>
+                  <label htmlFor="">Image:</label>
                   <input
                     required
                     type="file"
@@ -114,12 +116,18 @@ const AddServicePage = (props) => {
                     className="form-control"
                   />
                 </div>
-                <button type="submit">submit</button>
+                <div className="btn-container">
+                  <button type="submit" className="btn btn-block form-btn">
+                    Submit
+                  </button>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
+
+      <Footer />
     </React.Fragment>
   );
 };

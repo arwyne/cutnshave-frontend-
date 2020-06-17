@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const TransactionRow = ({ transactions }) => {
   let transaction = "";
@@ -23,16 +24,17 @@ const TransactionRow = ({ transactions }) => {
       return (
         <tr key={transaction.id}>
           <td>{transaction.referenceNo}</td>
-          <td>{transaction.reservationDate}</td>
-          <td>{transaction.reservationTime}</td>
+          <td>{moment(transaction.reservationDate).format("MMM Do YYYY")}</td>
+          <td>{moment(transaction.reservationTime, "hh:mm").format("LT")}</td>
           <td>{transaction.service.service}</td>
           <td>
             {transaction.user.firstName + " " + transaction.user.lastName}
           </td>
           <td>{transaction.user.mobileNo}</td>
           <td>
-            <button>Approve</button>
-            <button>Delete</button>
+            <i className="fas fa-check text-success trans-icons"></i>
+
+            <i className="fas fa-times text-danger trans-icons"></i>
           </td>
         </tr>
       );
