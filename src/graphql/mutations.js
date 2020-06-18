@@ -109,6 +109,14 @@ const addReservationMutation = gql`
   }
 `;
 
+const deleteReservationMutation = gql`
+  mutation($id: ID!) {
+    deleteReservation(id: $id) {
+      id
+    }
+  }
+`;
+
 export {
   addUserMutation,
   loginMutation,
@@ -116,4 +124,5 @@ export {
   updateServiceMutation,
   deleteServiceMutation,
   addReservationMutation,
+  deleteReservationMutation,
 };

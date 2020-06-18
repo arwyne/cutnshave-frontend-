@@ -7,7 +7,7 @@ const NavBar = () => {
 
   let logged = "";
   if (localStorage.token != null) {
-    if (localStorage.role === "0") {
+    if (localStorage.role === "1") {
       logged = (
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
@@ -102,7 +102,7 @@ const NavBar = () => {
         aria-label="Toggle navigation"
       >
         <span>
-          <i class="fas fa-angle-double-down toggler-icon"></i>
+          <i className="fas fa-angle-double-down toggler-icon"></i>
         </span>
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">

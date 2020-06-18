@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import Swal from "sweetalert2";
+// import { Redirect } from "react-router-dom";
+// import Swal from "sweetalert2";
 
 /* Mutations */
 import { graphql } from "react-apollo";
@@ -35,17 +35,17 @@ const UpdateServiceForm = (props) => {
 
   return (
     <React.Fragment>
-      <div className="container-fluid updateform-main-container">
-        <div>
-          <img src={returnFile} alt="" className="img-fluid" />
-        </div>
-        <div className="updateService-container">
-          <div className="row updateService-header">
+      <div className="container-fluid updateservice-main-container">
+        <div className="row updateservice-container">
+          <div className="updateservice-header">
             <h3>Update Service</h3>
             <div className="hr-black"></div>
           </div>
-          <div className="row updateService-body">
-            <div className="col-lg-4">
+          <div className="row updateservice-body">
+            <div className="updateform-image-container col-lg-5 offset-lg-1">
+              <img src={returnFile} alt="" className="img-fluid" />
+            </div>
+            <div className="col-lg-6">
               <form onSubmit={(e) => props.updateService(e, updateOnService)}>
                 <div className="form-group">
                   <label htmlFor="">Service</label>
@@ -82,7 +82,9 @@ const UpdateServiceForm = (props) => {
                   />
                 </div>
 
-                <button type="submit">submit</button>
+                <button className="btn form-btn" type="submit">
+                  Update
+                </button>
               </form>
             </div>
           </div>

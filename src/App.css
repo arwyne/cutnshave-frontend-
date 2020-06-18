@@ -267,6 +267,8 @@ input[type="number"],
 input[type="file"],
 input[type="date"],
 input[type="time"],
+input[type="email"],
+input[type="password"],
 textarea {
   outline: 0;
   border-radius: 4px;
@@ -279,6 +281,8 @@ input[type="number"]:hover,
 input[type="file"]:hover,
 input[type="date"]:hover,
 input[type="time"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
 textarea:hover {
   box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
 }
@@ -288,6 +292,8 @@ input[type="number"]:focus,
 input[type="file"]:focus,
 input[type="date"]:focus,
 input[type="time"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
 textarea:focus {
   color: #4b515d;
   border: 1px solid #b8b6b6;
@@ -413,10 +419,19 @@ label {
 }
 
 /* Update Form */
-.updateform-main-container {
+.updateservice-main-container {
   max-width: 1200px;
   display: flex;
+  margin: 0 auto;
   margin-top: 100px;
+  justify-content: center;
+}
+.updateservice-header {
+  margin: 0 auto;
+}
+.updateservice-body {
+  margin: 0 auto;
+  align-items: center;
 }
 
 /* Transaction Page */
@@ -442,6 +457,22 @@ label {
   max-width: 1200px;
   margin: 0 auto;
   padding: 100px;
+}
+
+.register-main-container {
+  padding-top: 100px;
+}
+
+.register-form {
+  padding-top: 30px;
+}
+
+.register-btn-container {
+  text-align: center;
+}
+
+.login-main-container {
+  padding-top: 100px;
 }
 
 /* 
@@ -504,6 +535,16 @@ label {
 
   .transaction-main-container {
     max-width: 300px;
+  }
+
+  .register-form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .login-form {
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 

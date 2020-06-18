@@ -3,10 +3,6 @@ import NavBar from "../../components/NavBar";
 
 import Footer from "../../components/Footer";
 
-/* Mutations */
-import { graphql } from "react-apollo";
-// import { getMoviesQuery } from "../../graphql/queries";
-
 const HomePage = (props) => {
   return (
     <React.Fragment>

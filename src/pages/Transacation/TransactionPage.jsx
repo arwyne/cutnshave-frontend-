@@ -7,13 +7,26 @@ import { flowRight as compose } from "lodash";
 import { graphql } from "react-apollo";
 import { getReservationsQuery } from "../../graphql/queries";
 import TransactionRow from "../../pages/Transacation/TransactionRow";
+import { deleteReservationMutation } from "../../graphql/mutations";
 
 const TransactionPage = (props) => {
   const datas = props.getReservationsQuery.reservations;
 
+  const deleteReservation = (id) => {
+    props.deleteReservationMutation({
+      variables: { id: id },
+      refetchQueries: [{ query: getReservationsQuery }],
+    });
+  };
+
   let data = "";
   if (datas !== undefined) {
-    data = <TransactionRow transactions={datas} />;
+    data = (
+      <TransactionRow
+        transactions={datas}
+        deleteReservation={deleteReservation}
+      />
+    );
     // data = datas.map((data) => {
     //   let danger = "";
     //   if (data.referenceNo === "#RES2020517113637") {
@@ -74,6 +87,7 @@ const TransactionPage = (props) => {
   );
 };
 
-export default graphql(getReservationsQuery, { name: "getReservationsQuery" })(
-  TransactionPage
-);
+export default compose(
+  graphql(deleteReservationMutation, { name: "deleteReservationMutation" }),
+  graphql(getReservationsQuery, { name: "getReservationsQuery" })
+)(TransactionPage);

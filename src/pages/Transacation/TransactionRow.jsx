@@ -1,7 +1,8 @@
 import React from "react";
 import moment from "moment";
 
-const TransactionRow = ({ transactions }) => {
+const TransactionRow = ({ transactions, deleteReservation }) => {
+  console.log(deleteReservation);
   let transaction = "";
   if (transactions !== undefined) {
     transaction = transactions.map((transaction) => {
@@ -34,7 +35,10 @@ const TransactionRow = ({ transactions }) => {
           <td>
             <i className="fas fa-check text-success trans-icons"></i>
 
-            <i className="fas fa-times text-danger trans-icons"></i>
+            <i
+              onClick={() => deleteReservation(transaction.id)}
+              className="fas fa-times text-danger trans-icons"
+            ></i>
           </td>
         </tr>
       );

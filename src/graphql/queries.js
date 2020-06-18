@@ -1,5 +1,4 @@
 import { gql } from "apollo-boost";
-import { GraphQLObjectType } from "graphql";
 
 const getServicesQuery = gql`
   {

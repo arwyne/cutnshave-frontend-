@@ -21,7 +21,7 @@ const RegisterPage = (props) => {
   }
 
   const registerNewUser = (e) => {
-    alert(firstName);
+    // alert(firstName);
     e.preventDefault();
 
     props
@@ -60,10 +60,17 @@ const RegisterPage = (props) => {
   return (
     <React.Fragment>
       <NavBar />
-      <div className="container-fluid">
+      <div className="container-fluid register-main-container">
         <div className="row mt-4 justify-content-md-center">
-          <div className="col-md-8">
-            <form onSubmit={(e) => registerNewUser(e)}>
+          <div className="col-lg-4 col-md-6 register-container">
+            <div className="row register-header">
+              <h3>Register</h3>
+            </div>
+            <div className="hr-black"></div>
+            <form
+              onSubmit={(e) => registerNewUser(e)}
+              className="register-form"
+            >
               <div className="form-group">
                 First Name:
                 <input
@@ -135,9 +142,11 @@ const RegisterPage = (props) => {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
-                Register
-              </button>
+              <div className="register-btn-container">
+                <button type="submit" className="btn form-btn register-btn">
+                  Register
+                </button>
+              </div>
             </form>
           </div>
         </div>

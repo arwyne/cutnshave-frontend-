@@ -12,7 +12,7 @@ const ServicePage = (props) => {
   if (services !== undefined) {
     service = services.map((service) => {
       return (
-        <div className="row service-container">
+        <div key={service.id} className="row service-container">
           <div className="col-lg-3 offset-lg-1 col-md-6 offset-md-3">
             <img className="img-fluid" src={service.image} alt="" />
           </div>

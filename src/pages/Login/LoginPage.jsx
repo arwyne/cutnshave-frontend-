@@ -51,10 +51,14 @@ const LoginPage = (props) => {
   return (
     <React.Fragment>
       <NavBar />
-      <div className="container-fluid">
+      <div className="container-fluid login-main-container">
         <div className="row mt-4 justify-content-md-center">
-          <div className="col-md-8">
-            <form onSubmit={(e) => login(e)}>
+          <div className="col-lg-4 col-md-6">
+            <div className="row register-header">
+              <h3>Login</h3>
+            </div>
+            <div className="hr-black"></div>
+            <form onSubmit={(e) => login(e)} className="login-form">
               <div className="form-group">
                 Email
                 <input
@@ -66,7 +70,7 @@ const LoginPage = (props) => {
                 />
               </div>
               <div className="form-group">
-                password
+                Password
                 <input
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -75,7 +79,9 @@ const LoginPage = (props) => {
                   className="form-control"
                 />
               </div>
-              <button className="btn btn-primary">Login</button>
+              <div className="text-center">
+                <button className="btn form-btn">Login</button>
+              </div>
             </form>
           </div>
         </div>
