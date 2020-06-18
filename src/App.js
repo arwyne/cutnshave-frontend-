@@ -23,12 +23,13 @@ import { ApolloProvider } from "react-apollo";
 
 // Apollo Setup
 // const client = new ApolloClient({ uri: "http://localhost:4000/graphql" });
-const client = new ApolloClient({ uri: "https://cutnshave.herokuapp.com/graphql" });
+const client = new ApolloClient({
+  uri: "https://cutnshave.herokuapp.com/graphql",
+});
 
 // const nodeServer = () => {
 // 	return 'https://name-of-backend.herokuapp.com/'
 // }
-
 
 const App = () => {
   return (
@@ -60,7 +61,5 @@ const App = () => {
     </ApolloProvider>
   );
 };
-
-export
 
 export default App;
