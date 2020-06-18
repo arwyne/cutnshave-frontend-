@@ -30,11 +30,15 @@ const AddServicePage = (props) => {
     const formData = new FormData();
     formData.append("file", file);
 
-    const res = await axios.post("http://localhost:4000/upload", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const res = await axios.post(
+      "https://cutnshave.herokuapp.com/upload",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
 
     const { filePath } = res.data;
 
