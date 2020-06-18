@@ -42,10 +42,10 @@ const UpdateServiceForm = (props) => {
             <div className="hr-black"></div>
           </div>
           <div className="row updateservice-body">
-            <div className="updateform-image-container col-lg-5 offset-lg-1">
+            <div className="updateform-image-container col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-10 offset-1">
               <img src={returnFile} alt="" className="img-fluid" />
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-6 offset-md-3 col-10 offset-1">
               <form onSubmit={(e) => props.updateService(e, updateOnService)}>
                 <div className="form-group">
                   <label htmlFor="">Service</label>
@@ -81,10 +81,11 @@ const UpdateServiceForm = (props) => {
                     defaultValue={returnPrice}
                   />
                 </div>
-
-                <button className="btn form-btn" type="submit">
-                  Update
-                </button>
+                <div className="update-btn-container">
+                  <button className="btn form-btn" type="submit">
+                    Update
+                  </button>
+                </div>
               </form>
             </div>
           </div>

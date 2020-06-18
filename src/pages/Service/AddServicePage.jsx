@@ -31,7 +31,7 @@ const AddServicePage = (props) => {
     formData.append("file", file);
 
     const res = await axios.post(
-      "https://cutnshave.herokuapp.com/upload",
+      "https://cutnshave.herokuapp.com/uploads/",
       formData,
       {
         headers: {
@@ -77,7 +77,7 @@ const AddServicePage = (props) => {
             <div className="hr-black"></div>
           </div>
           <div className="row add-service-body">
-            <div className="col">
+            <div className="col-lg-10 offset-lg-1 col-md-8 offset-md-2">
               <form onSubmit={onSubmit} className="add-form">
                 <div className="form-group">
                   <label htmlFor="">Service:</label>

@@ -55,6 +55,7 @@ font-family: 'Vollkorn SC', serif;
 
 .dropdown-menu {
   background-color: black;
+  text-align: center;
 }
 
 .dropdown-item {
@@ -475,6 +476,10 @@ label {
   padding-top: 100px;
 }
 
+.update-btn-container {
+  text-align: center;
+}
+
 /* 
 
   Media Query
@@ -544,6 +549,11 @@ label {
 
   .login-form {
     max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .add-service-body {
+    max-width: 320px;
     margin: 0 auto;
   }
 }
