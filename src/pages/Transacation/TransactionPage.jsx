@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import Swal from "sweetalert2";
 
 /* Mutations */
 import { flowRight as compose } from "lodash";
@@ -13,10 +14,21 @@ const TransactionPage = (props) => {
   const datas = props.getReservationsQuery.reservations;
 
   const deleteReservation = (id) => {
-    props.deleteReservationMutation({
-      variables: { id: id },
-      refetchQueries: [{ query: getReservationsQuery }],
-    });
+    props
+      .deleteReservationMutation({
+        variables: { id: id },
+        refetchQueries: [{ query: getReservationsQuery }],
+      })
+      .then((response) => {
+        const serviceAdded = response.data.deleteReservation;
+
+        if (serviceAdded) {
+          Swal.fire({
+            title: "Deleted Transaction Successfully",
+            icon: "success",
+          });
+        }
+      });
   };
 
   let data = "";

@@ -3,6 +3,7 @@ import { graphql } from "react-apollo";
 import { getServicesQuery } from "../../graphql/queries.js";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import Swal from "sweetalert2";
 
 import { flowRight as compose } from "lodash";
 import { deleteServiceMutation } from "../../graphql/mutations";
@@ -12,10 +13,21 @@ const UpdateServiceList = (props) => {
   const services = props.getServicesQuery.services;
 
   const deleteService = (id) => {
-    props.deleteServiceMutation({
-      variables: { id: id },
-      refetchQueries: [{ query: getServicesQuery }],
-    });
+    props
+      .deleteServiceMutation({
+        variables: { id: id },
+        refetchQueries: [{ query: getServicesQuery }],
+      })
+      .then((response) => {
+        const serviceAdded = response.data.deleteService;
+
+        if (serviceAdded) {
+          Swal.fire({
+            title: "Deleted Service Successfully",
+            icon: "success",
+          });
+        }
+      });
   };
 
   let service = "";
