@@ -32,6 +32,17 @@ const client = new ApolloClient({
 // }
 
 const App = () => {
+  let logged = "";
+  if (localStorage.token != null) {
+    logged = (
+      <Route exact path="/reservation/:serviceid" component={ReservationPage} />
+    );
+  } else {
+    logged = (
+      <Route exact path="/reservation/:serviceid" component={LoginPage} />
+    );
+  }
+
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
@@ -48,11 +59,7 @@ const App = () => {
             component={UpdateServicePage}
           />
           {/* <Route exact path="/reservation" component={ReservationPage} /> */}
-          <Route
-            exact
-            path="/reservation/:serviceid"
-            component={ReservationPage}
-          />
+          {logged}
           {/* <Route exact path="/profile" component={ProfilePage} /> */}
           <Route exact path="/transaction" component={TransactionPage} />
           <Route component={PageNotFound}></Route>

@@ -79,6 +79,9 @@ const LoginPage = (props) => {
                   className="form-control"
                 />
               </div>
+              <div>
+                Don't have an account? <a href="/register">Register here</a>
+              </div>
               <div className="text-center">
                 <button className="btn form-btn">Login</button>
               </div>
