@@ -31,7 +31,7 @@ const AddServicePage = (props) => {
     formData.append("file", file);
 
     const res = await axios.post(
-      "https://cutnshave.herokuapp.com/uploads/",
+      "https://cutnshave.herokuapp.com/upload/",
       formData,
       {
         headers: {
